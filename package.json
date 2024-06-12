@@ -1,0 +1,44 @@
+{
+  "name": "@xiyi-tech/yaml-tools",
+  "description": "YAML conversion tool",
+  "version": "1.0.0",
+  "author": {
+    "name": "Xiyi Technology",
+    "email": "admin@xiyi.tools"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiyi-tech/yaml-tools.git"
+  },
+  "keywords": [
+    "conversion",
+    "yaml",
+    "json",
+    "yaml2json",
+    "json2yaml"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "package.json"
+  ],
+  "bin": {
+    "yaml2json": "dist/y2j.index.js",
+    "json2yaml": "dist/j2y.index.js"
+  },
+  "scripts": {
+    "prepack": "rimraf ./dist && tsc --removeComments"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "yaml": "^2.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "rimraf": "^5.0.7",
+    "typescript": "^5.4.5"
+  }
+}
