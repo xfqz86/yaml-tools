@@ -28,7 +28,8 @@ Arguments:
 Options:
   -V, --version        output the version number
   -o, --output <path>  Output file path, if not specified, output to stdout
-  -f, --format         Format output json
+  -f, --format         Format output
+  -M, --no-merge       Don't support for << merge keys.
   -h, --help           display help for command
 ```
 
@@ -60,10 +61,10 @@ yaml2json ./example.yaml
 # input from file, output to file
 yaml2json ./example.yaml -o ./example.json
 
-# input from pipline, out to stdout
+# input from pipline, output to stdout
 cat ./example.yaml | yaml2json
 
-# input from pipline, out to file
+# input from pipline, output to file
 cat ./example.yaml | yaml2json -o ./example.json
 ```
 
