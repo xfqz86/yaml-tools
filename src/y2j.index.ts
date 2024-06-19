@@ -8,10 +8,11 @@ stdCmd(program)
   .name('yaml2json')
   .description('Convert YAML to JSON')
   .option('-f, --format', 'Format output')
+  .option('-M, --no-merge', 'Don\'t support for << merge keys. ')
   .action(async (input, options) => {
     try {
       const content = await readContent(input)
-      const dataObj = parse(content)
+      const dataObj = parse(content, { merge: options.merge === true })
       const dataJSON = JSON.stringify(dataObj, null, options.format ? 2 : undefined)
       if (options.output) {
         await writeFile(options.output, dataJSON, { encoding: 'utf-8' })
